@@ -23,6 +23,7 @@ dotnet add Api.Websocket/Api.Websocket.csproj reference Application/Application.
 dotnet add Application/Application.csproj reference Core.Domain/Core.Domain.csproj
 dotnet add Infrastructure.Mqtt/Infrastructure.Mqtt.csproj reference Application/Application.csproj
 dotnet add Infrastructure.Postgres/Infrastructure.Postgres.csproj reference Infrastructure.Postgres.Scaffolding/Infrastructure.Postgres.Scaffolding.csproj
+dotnet add Infrastructure.Postgres/Infrastructure.Postgres.csproj reference Application/Application.csproj
 dotnet add Infrastructure.Postgres.Scaffolding/Infrastructure.Postgres.Scaffolding.csproj reference Application/Application.csproj
 dotnet add Infrastructure.Websocket/Infrastructure.Websocket.csproj reference Application/Application.csproj
 dotnet add Startup/Startup.csproj reference Api.Rest/Api.Rest.csproj Api.Websocket/Api.Websocket.csproj Infrastructure.Mqtt/Infrastructure.Mqtt.csproj Infrastructure.Postgres/Infrastructure.Postgres.csproj Infrastructure.Websocket/Infrastructure.Websocket.csproj Application/Application.csproj
@@ -180,6 +181,7 @@ dotnet add Api.Websocket/Api.Websocket.csproj reference Application/Application.
 dotnet add Application/Application.csproj reference Core.Domain/Core.Domain.csproj
 dotnet add Infrastructure.Mqtt/Infrastructure.Mqtt.csproj reference Application/Application.csproj
 dotnet add Infrastructure.Postgres/Infrastructure.Postgres.csproj reference Infrastructure.Postgres.Scaffolding/Infrastructure.Postgres.Scaffolding.csproj
+dotnet add Infrastructure.Postgres/Infrastructure.Postgres.csproj reference Application/Application.csproj
 dotnet add Infrastructure.Postgres.Scaffolding/Infrastructure.Postgres.Scaffolding.csproj reference Application/Application.csproj
 dotnet add Infrastructure.Websocket/Infrastructure.Websocket.csproj reference Application/Application.csproj
 dotnet add Startup/Startup.csproj reference Api.Rest/Api.Rest.csproj Api.Websocket/Api.Websocket.csproj Infrastructure.Mqtt/Infrastructure.Mqtt.csproj Infrastructure.Postgres/Infrastructure.Postgres.csproj Infrastructure.Websocket/Infrastructure.Websocket.csproj Application/Application.csproj
