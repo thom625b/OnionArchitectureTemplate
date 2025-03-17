@@ -114,7 +114,37 @@ docker-compose*
 EOF
 
 # Create directory structure
-cd ./server && mkdir -p Api.Rest/{Controllers,Extensions,Middleware} Api.Websocket/{EventHandlers,Interfaces} Application/{Interfaces,Models,Services} Core.Domain/Entities Infrastructure.Mqtt/{PublishingHandlers,SubscriptionHandlers} Infrastructure.Postgres/Postgresql.Data Infrastructure.Websocket/ConnectionManagerScopedModels Startup/{Documentation,Properties,Proxy} Startup.Tests/{Auth,EventTests,ObjectValidationTests,OpenApiTests,TestUtils}
+cd server
+mkdir -p Api.Rest/{Controllers,Extensions,Middleware} \
+       Api.Websocket/{EventHandlers,Interfaces} \
+       Application/{Interfaces,Models,Services} \
+       Core.Domain/Entities \
+       Infrastructure.Mqtt/{PublishingHandlers,SubscriptionHandlers} \
+       Infrastructure.Postgres/Postgresql.Data \
+       Infrastructure.Websocket/ConnectionManagerScopedModels \
+       Startup/{Documentation,Properties,Proxy} \
+       Startup.Tests/{Auth,EventTests,ObjectValidationTests,OpenApiTests,TestUtils}
+touch Api.Rest/Controllers/.gitkeep \
+      Api.Rest/Extensions/.gitkeep \
+      Api.Rest/Middleware/.gitkeep \
+      Api.Websocket/EventHandlers/.gitkeep \
+      Api.Websocket/Interfaces/.gitkeep \
+      Application/Interfaces/.gitkeep \
+      Application/Models/.gitkeep \
+      Application/Services/.gitkeep \
+      Core.Domain/Entities/.gitkeep \
+      Infrastructure.Mqtt/PublishingHandlers/.gitkeep \
+      Infrastructure.Mqtt/SubscriptionHandlers/.gitkeep \
+      Infrastructure.Postgres/Postgresql.Data/.gitkeep \
+      Infrastructure.Websocket/ConnectionManagerScopedModels/.gitkeep \
+      Startup/Documentation/.gitkeep \
+      Startup/Properties/.gitkeep \
+      Startup/Proxy/.gitkeep \
+      Startup.Tests/Auth/.gitkeep \
+      Startup.Tests/EventTests/.gitkeep \
+      Startup.Tests/ObjectValidationTests/.gitkeep \
+      Startup.Tests/OpenApiTests/.gitkeep \
+      Startup.Tests/TestUtils/.gitkeep
 
 # Initialize git
 cd ..
@@ -241,8 +271,38 @@ docker-compose*
 "@
 
 # Create directory structure
-cd .\server\; mkdir -Force Api.Rest\Controllers, Api.Rest\Extensions, Api.Rest\Middleware, Api.Websocket\EventHandlers, Api.Websocket\Interfaces, Application\Interfaces, Application\Models, Application\Services, Core.Domain\Entities, Infrastructure.Mqtt\PublishingHandlers, Infrastructure.Mqtt\SubscriptionHandlers, Infrastructure.Postgres\Postgresql.Data, Infrastructure.Websocket\ConnectionManagerScopedModels, Startup\Documentation, Startup\Properties, Startup\Proxy, Startup.Tests\Auth, Startup.Tests\EventTests, Startup.Tests\ObjectValidationTests, Startup.Tests\OpenApiTests, Startup.Tests\TestUtils
+cd .\server\; 
+# First create all directories
+mkdir -Force Api.Rest\Controllers, Api.Rest\Extensions, Api.Rest\Middleware, Api.Websocket\EventHandlers, Api.Websocket\Interfaces, Application\Interfaces, Application\Models, Application\Services, Core.Domain\Entities, Infrastructure.Mqtt\PublishingHandlers, Infrastructure.Mqtt\SubscriptionHandlers, Infrastructure.Postgres\Postgresql.Data, Infrastructure.Websocket\ConnectionManagerScopedModels, Startup\Documentation, Startup\Properties, Startup\Proxy, Startup.Tests\Auth, Startup.Tests\EventTests, Startup.Tests\ObjectValidationTests, Startup.Tests\OpenApiTests, Startup.Tests\TestUtils
 
+# Then create .gitkeep files in each directory
+$dirs = @(
+    "Api.Rest\Controllers", 
+    "Api.Rest\Extensions", 
+    "Api.Rest\Middleware", 
+    "Api.Websocket\EventHandlers", 
+    "Api.Websocket\Interfaces", 
+    "Application\Interfaces", 
+    "Application\Models", 
+    "Application\Services", 
+    "Core.Domain\Entities", 
+    "Infrastructure.Mqtt\PublishingHandlers", 
+    "Infrastructure.Mqtt\SubscriptionHandlers", 
+    "Infrastructure.Postgres\Postgresql.Data", 
+    "Infrastructure.Websocket\ConnectionManagerScopedModels", 
+    "Startup\Documentation", 
+    "Startup\Properties", 
+    "Startup\Proxy", 
+    "Startup.Tests\Auth", 
+    "Startup.Tests\EventTests", 
+    "Startup.Tests\ObjectValidationTests", 
+    "Startup.Tests\OpenApiTests", 
+    "Startup.Tests\TestUtils"
+)
+
+foreach ($dir in $dirs) {
+    New-Item -Path "$dir\.gitkeep" -ItemType File -Force
+}
 # Initialize git
 cd ..
 git init
