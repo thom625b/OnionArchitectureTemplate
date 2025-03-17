@@ -120,6 +120,7 @@ cd ./server && mkdir -p Api.Rest/{Controllers,Extensions,Middleware} Api.Websock
 cd ..
 git init
 dotnet new gitignore
+open .gitignore
 # Edit .gitignore to add node_modules and dist
 git add .
 git commit -m "first commit"
